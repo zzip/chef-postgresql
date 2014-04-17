@@ -35,7 +35,7 @@ template node["postgresql"]["hba_file"] do
   owner  "postgres"
   group  "postgres"
   mode   "0640"
-  notifies :restart, "service[postgresql]"
+  notifies :reload, "service[postgresql]"
 end
 
 # pg_ident
@@ -44,7 +44,7 @@ template node["postgresql"]["ident_file"] do
   owner  "postgres"
   group  "postgres"
   mode   "0640"
-  notifies :restart, "service[postgresql]"
+  notifies :reload, "service[postgresql]"
 end
 
 # postgresql
